@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Muzammal — Software Engineer</title>
+<meta name="description" content="Muhammad Muzammal, software engineer building full-stack and AI-integrated applications. Projects, experience and CV.">
+<meta property="og:title" content="Muhammad Muzammal — Software Engineer">
+<meta property="og:description" content="Full-stack and AI-integrated applications. Projects, experience and CV.">
+<meta property="og:image" content="https://muzammal-12.github.io/assets/photo.jpg">
+<link rel="icon" href="assets/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --text: #1a1a1a; --muted: #5d5d5a; --line: #e4e3df;
+  --accent: #0f6e5c; --accent-soft: #e3f1ed; --chip: #efeeea;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #121413; --surface: #1a1d1c; --text: #ececea; --muted: #a3a6a2; --line: #2b2f2d;
+          --accent: #4cc3a6; --accent-soft: #1d302b; --chip: #242826; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+nav .brand { font-weight: 700; color: var(--text); }
+nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+nav ul a { color: var(--muted); }
+nav ul a:hover { color: var(--text); text-decoration: none; }
+
+.hero { display: grid; grid-template-columns: 1fr 220px; gap: 48px; align-items: center; padding: 72px 0 56px; }
+.hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.02em; }
+.hero .title { font-family: "JetBrains Mono", monospace; font-size: 14px; color: var(--accent); margin: 0 0 18px; }
+.hero p.lead { color: var(--muted); font-size: 17px; margin: 0 0 26px; max-width: 54ch; }
+.hero img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; border: 4px solid var(--surface);
+            box-shadow: 0 0 0 1px var(--line); }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 14px; border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn.primary { color: #0d1a17; } }
+.btn:hover { text-decoration: none; filter: brightness(1.05); }
+
+section { padding: 44px 0; border-top: 1px solid var(--line); }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 22px; font-weight: 600; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px; }
+.card h3 { margin: 0; font-size: 18px; }
+.meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 8px; }
+.meta .when { color: var(--muted); font-size: 14px; }
+.card p { margin: 6px 0 0; color: var(--muted); }
+.card ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+.card li { margin-bottom: 4px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft);
+       padding: 2px 10px; border-radius: 999px; margin-bottom: 10px; }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.stack span, .skills span { font-family: "JetBrains Mono", monospace; font-size: 12px; background: var(--chip); padding: 4px 10px; border-radius: 6px; }
+.featured { border-color: var(--accent); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid2 .card { margin-bottom: 0; }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; }
+.skills span { font-size: 13px; padding: 6px 12px; }
+
+.contact p { color: var(--muted); max-width: 56ch; }
+footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  nav ul { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 28px; padding: 40px 0 36px; }
+  .hero img { width: 140px; height: 140px; order: -1; }
+  .hero h1 { font-size: 34px; }
+  .grid2 { grid-template-columns: 1fr; }
+  .card { padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top">Muhammad Muzammal</a>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <h1>Muhammad Muzammal</h1>
+      <p class="title">Senior Software Engineer · Full Stack (AI)</p>
+      <p class="lead">I build full-stack and AI-integrated applications, from the database and APIs to the web, mobile and desktop interfaces people use every day.</p>
+      <div class="btns">
+        <a class="btn primary" href="assets/Muhammad_Muzammal_CV.pdf" download>Download CV</a>
+        <a class="btn" href="#projects">See projects</a>
+        <a class="btn" href="https://github.com/muzammal-12" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <img src="assets/photo.jpg" alt="Photo of Muhammad Muzammal" width="220" height="220">
+  </div>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <div class="meta"><h3>Senior Software Engineer — Atronm Technologies</h3><span class="when">1 year</span></div>
+      <ul>
+        <li>Led design and development of full-stack features end to end, from database schema and REST APIs to the front end.</li>
+        <li>Owned technical decisions on architecture and code quality, and reviewed pull requests across the team.</li>
+        <li>Mentored junior developers and broke client requirements down into planned sprint tasks.</li>
+        <li>Improved performance and reliability through query optimization, testing and production monitoring.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="meta"><h3>Full Stack Developer (AI) — AIDevGen</h3><span class="when">1 year</span></div>
+      <ul>
+        <li>Developed and maintained full-stack web applications with AI-driven features.</li>
+        <li>Built and integrated machine learning models into production applications.</li>
+        <li>Designed REST APIs and database schemas, working with cross-functional teams to ship scalable solutions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card featured">
+      <span class="tag">Final Year Project</span>
+      <div class="meta"><h3>Recalla — AI Meeting Assistant</h3></div>
+      <p>Records meetings and turns them into something you can search and act on.</p>
+      <ul>
+        <li>Transcribes recordings with Whisper, separates speakers, and writes AI summaries.</li>
+        <li>Stores every meeting in a semantic memory (vector search) so you can ask questions about past discussions.</li>
+        <li>An AI agent acts on what was said: Google Calendar events, Gmail, reminders, and WhatsApp and Telegram messages.</li>
+        <li>FastAPI backend with a React web app and a React Native (Expo) mobile app with live transcription.</li>
+      </ul>
+      <div class="stack"><span>Python</span><span>FastAPI</span><span>Whisper</span><span>LLMs</span><span>ChromaDB</span><span>spaCy</span><span>React</span><span>React Native</span></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag">Client software</span>
+        <div class="meta"><h3>Salman Traders</h3></div>
+        <p>Offline Windows app for a trading business: invoicing, stock, cash and bank vouchers, cheques and 70+ accounting and trade reports, with legacy data import and automatic backups.</p>
+        <div class="stack"><span>Electron</span><span>Node.js</span><span>SQLite</span></div>
+      </div>
+      <div class="card">
+        <span class="tag">Client software</span>
+        <div class="meta"><h3>Prince Mall POS</h3></div>
+        <p>Point-of-sale software for a retail store, handling billing, product and stock management, and daily sales reporting.</p>
+        <div class="stack"><span>Desktop</span><span>POS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python (NumPy, Pandas)</span><span>JavaScript / Node.js</span><span>FastAPI</span><span>React</span><span>React Native</span>
+      <span>Electron</span><span>REST APIs</span><span>SQL &amp; SQLite</span><span>AI/ML Integration</span><span>LLMs &amp; Agents</span>
+      <span>Data Structures &amp; Algorithms</span><span>OOP (C++)</span><span>Git</span><span>Agile/Scrum</span>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <div class="meta"><h3>BS Computer Science — Riphah International University</h3><span class="when">2022 – 2026</span></div>
+      <p>CGPA 3.1 · Final Year Project: Recalla</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Open to software engineering roles. The quickest way to reach me is email.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:muzammalkhalid139@gmail.com">muzammalkhalid139@gmail.com</a>
+      <a class="btn" href="https://github.com/muzammal-12" target="_blank" rel="noopener">github.com/muzammal-12</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Muhammad Muzammal</div></footer>
+</body>
+</html>
